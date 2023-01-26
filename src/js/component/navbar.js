@@ -4,8 +4,8 @@ import banner from "../../img/Star-wars-logo.png"
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar bg-body-tertiary d-flex">
-			<div class="container-fluid">
+		<nav className="navbar bg-body-tertiary d-flex justify-content-between">
+			<div class="container">
 				<Link to="/">
 					<img className="navbar-brand mb-0 h1" src={banner}/>
 				</Link>
