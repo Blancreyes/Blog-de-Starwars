@@ -8,7 +8,7 @@ const Card = () => {
 	// const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="card" style={{width: "18rem"}}>
+		<div className="card">
             <img src="../img/rigo-baby.jpg" className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">Card title</h5>
