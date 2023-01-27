@@ -6,10 +6,10 @@ const LearMore = () => {
         <div className="container">
             <div className="card justify-content-center">
                 <div className="row g-0">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-xs-12">
                             <img src="..." style={{maxWidth:"500px"}}/>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-xs-12">
                             <h2 className="d-flex justify-content-center textcolor">Nombre</h2>
                             <p className="text-center textcolor">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur</p>
                     </div>

@@ -17,7 +17,9 @@ export const Navbar = () => {
 
 					<Link to="demo">
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Favorites</button>
+							<button type="button" class="btn btn-primary">Favorites
+								<span class="badge text-bg-secondary ms-1">0</span>
+							</button>
 							<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
 								<span class="visually-hidden">Toggle Dropdown</span>
 							</button>
