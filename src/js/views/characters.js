@@ -38,7 +38,7 @@ console.log(infocharacter);
                     return <Card 
                         key={character.uid} 
                         id={character.uid} 
-                        image={"https://starwars-visualguide.com/#/characters/${character.id}.jpg"} 
+                        image={"url(./assets/img/characters/${character.id}.jpg)"} 
                         name={character.name} 
                         property2={character.gender} 
                         property3={character.hair_color} 
