@@ -1,29 +1,55 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../../styles/home.css";
 import Card from "../component/card.jsx";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 
 
 
-const Characters = () => {
+const Characters = (props) => {
+    // const { store, actions } = useContext(Context);
+    const [infocharacter, setInfoCharacter] = useState([])
+    const params = useParams();
+    console.log();
+    console.log();
+
+    function getCharactersInfo() {
+        fetch("https://www.swapi.tech/api/people/")
+        .then(res => res.json())
+		.then(data => setInfoCharacter(data.results))
+		.catch(err => console.error(err))
+        
+    }
+
+    useEffect(()=>{
+		getCharactersInfo()
+	},[])
+
+    // console.log(infocharacter.properties?.name);
+console.log(infocharacter);
+
 
     return (
         <div className="container mt-3">
                 <h3 className="text-warning text-start">Characters</h3>
             <div className="d-flex flex-row overflow-scroll">
-               
-                    <Card/> 
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-           
-                
+                {infocharacter.length > 0? infocharacter.map((character,index)=>{
+                    return <Card 
+                        key={character.uid} 
+                        id={character.uid} 
+                        image={"https://starwars-visualguide.com/#/characters/${character.id}.jpg"} 
+                        name={character.name} 
+                        property2={character.gender} 
+                        property3={character.hair_color} 
+                        property4={character.eye_color}
+                        
+                        />}):null}
             </div>
         </div>
+                     
     )
+                }
+        
 
-
-};
 export default Characters

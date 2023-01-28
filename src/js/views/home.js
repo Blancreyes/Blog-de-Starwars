@@ -8,13 +8,13 @@ import Vehicules from "./vehicules";
 
 
 
+
 export const Home = () => {
 
     return ( 
       <>
         <Characters />
-        <Planets />
-        <Vehicules/>
+    
       </>
     );
 };
