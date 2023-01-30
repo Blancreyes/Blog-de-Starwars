@@ -29,3 +29,12 @@ const LearMore = () => {
 };
 
 export default LearMore
+
+                        // key={character.uid} 
+                        // id={character.uid} 
+                        // image={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} 
+                        // name={character.name} 
+                        // property2={character.gender} 
+                        // property3={character.hair_color} 
+                        // property4={character.eye_color}
+                        // type={"people"}

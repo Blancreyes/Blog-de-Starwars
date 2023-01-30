@@ -11,10 +11,11 @@ const Characters = (props) => {
     // const { store, actions } = useContext(Context);
     const [infocharacter, setInfoCharacter] = useState([])
     const params = useParams();
-    console.log();
-    console.log();
+    
 
     function getCharactersInfo() {
+
+        https://swapi.dev/api/people
         fetch("https://www.swapi.tech/api/people/")
         .then(res => res.json())
 		.then(data => setInfoCharacter(data.results))
@@ -27,7 +28,7 @@ const Characters = (props) => {
 	},[])
 
     // console.log(infocharacter.properties?.name);
-console.log(infocharacter);
+
 
 
     return (
@@ -38,11 +39,12 @@ console.log(infocharacter);
                     return <Card 
                         key={character.uid} 
                         id={character.uid} 
-                        image={'https://starwars-visualguide.com/assets/img/characters/1.jpg'} 
+                        image={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} 
                         name={character.name} 
                         property2={character.gender} 
                         property3={character.hair_color} 
                         property4={character.eye_color}
+                        type={"people"}
                         
                         />}):null}
             </div>
