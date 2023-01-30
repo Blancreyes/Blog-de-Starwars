@@ -45,8 +45,7 @@ const Planets = (props) => {
                         
                         />}):null}
             </div>
-        </div>
-                     
+        </div>              
     )
                 }
         
