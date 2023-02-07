@@ -14,11 +14,11 @@ const LearMore = (props) => {
                             <p className="text-center textcolor">{props.description}</p>
                     </div>
                     <div className="d-flex flex-row mb-3 border-top border-warning justify-content-evenly">
-                        <h6 className="col-md-2 textcolor"><p className="ms-2">Birth Year</p><p className="ms-2">{props.property1}</p></h6>
-                        <h6 className="col-md-2 textcolor"><p className="ms-2">Gender</p><p className="ms-2">{props.property2}</p></h6>
-                        <h6 className="col-md-2 textcolor"><p className="ms-2">Heigth</p><p className="ms-2">{props.property3}</p></h6>
-                        <h6 className="col-md-2 textcolor"><p className="ms-2">Skin Color</p><p className="ms-2">{props.property4}</p></h6>
-                        <h6 className="col-md-2 textcolor"><p className="ms-2">Eye Color</p><p className="ms-2">{props.property5}</p></h6>
+                        <h6 className="col-md-2 textcolor"><p className="ms-2">Property1</p><p className="ms-2">{props.property1}</p></h6>
+                        <h6 className="col-md-2 textcolor"><p className="ms-2">Property2</p><p className="ms-2">{props.property2}</p></h6>
+                        <h6 className="col-md-2 textcolor"><p className="ms-2">Property3</p><p className="ms-2">{props.property3}</p></h6>
+                        <h6 className="col-md-2 textcolor"><p className="ms-2">Property5</p><p className="ms-2">{props.property4}</p></h6>
+                        <h6 className="col-md-2 textcolor"><p className="ms-2">Property5</p><p className="ms-2">{props.property5}</p></h6>
                     </div>
                 </div>
             </div>
