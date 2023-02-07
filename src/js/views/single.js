@@ -31,9 +31,21 @@ export const Single = props => {
 	},[])
 
 	console.log(infocharacter.properties?.name);	
+	console.log(infocharacter.uid);
 
 	var loginLearMoreButton;
-	if (params.type==="people") {loginLearMoreButton = <LearMore />;
+	if (params.type==="people") {
+		loginLearMoreButton = <LearMore 
+								key={infocharacter.uid}
+								id={infocharacter.uid}
+								image={`https://starwars-visualguide.com/assets/img/characters/${infocharacter.uid}.jpg`}
+								name={infocharacter.properties?.name}
+								description={infocharacter.description}
+								property1={infocharacter.properties?.birth_year}
+								property2={infocharacter.properties?.gender}
+								property3={infocharacter.properties?.height}
+								property4={infocharacter.properties?.skin_color}
+								property5={infocharacter.properties?.eye_color}/>;
 	} else if(params.type==="vehicle") {
 	  loginLearMoreButton = <LearMore />;
 	} else (loginLearMoreButton = <LearMore />)
