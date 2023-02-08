@@ -40,7 +40,7 @@ const Planets = (props) => {
                         id={planet.uid} 
                         image={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} 
                         name={planet.name} 
-                        type={"planet"}
+                        type={"planets"}
                         
                         />}):null}
             </div>

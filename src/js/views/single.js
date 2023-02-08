@@ -27,24 +27,19 @@ export const Single = props => {
         
     }
 
-	useEffect(()=>{
-		getInfo()
-	},[])
-
 	function getInfoPlanets() {
-
+	
         fetch(`https://www.swapi.tech/api/${type}/${theid}`)
         .then(res => res.json())
-		.then(data => setInfoPlanet(data.results))
+		.then(data => setInfoPlanet(data.result))
 		.catch(err => console.error(err))
         
     }
 
     useEffect(()=>{
+		getInfo()
 		getInfoPlanets()
 	},[])
-
-    console.log(infoPlanet.properties?.name);
 
 	var loginLearMoreButton;
 	if (params.type==="people") {
@@ -59,18 +54,19 @@ export const Single = props => {
 								property3={infocharacter.properties?.height}
 								property4={infocharacter.properties?.skin_color}
 								property5={infocharacter.properties?.eye_color}/>;
-	} else if(params.type==="planet") {
+	} else if(params.type==="planets") {
 	  loginLearMoreButton = <LearMore 
 								key={infoPlanet.uid}
 								id={infoPlanet.uid}
-								image={`https://starwars-visualguide.com/assets/img/characters/${infoPlanet.uid}.jpg`}
+								image={`https://starwars-visualguide.com/assets/img/planets/${infoPlanet.uid}.jpg`}
 								name={infoPlanet.properties?.name}
 								description={infoPlanet.description}
 								property1={infoPlanet.properties?.climate}
 								property2={infoPlanet.properties?.population}
 								property3={infoPlanet.properties?.orbital_period}
 								property4={infoPlanet.properties?.rotation_period}
-								property5={infoPlanet.properties?.diameter}/>;
+								property5={infoPlanet.properties?.diameter}
+								/>;
 	  
 	} else (loginLearMoreButton = <LearMore 
 	
