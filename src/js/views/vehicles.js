@@ -39,32 +39,18 @@ const Vehicles = (props) => {
 
         // console.log(infoVehicle.properties?.name);
 
-        return ( <
-                div className = "container mt-3" >
-                <
-                h3 className = "text-warning text-start" > Vehicles < /h3> <
-                div className = "d-flex flex-row overflow-scroll" > {
-                    store.infoVehicle.length > 0 ? store.infoVehicle.map((vehicle, index) => {
-                            return <Card
-                            key = {
-                                vehicle.uid
-                            }
-                            id = {
-                                vehicle.uid
-                            }
-                            image = {
-                                `https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`
-                            }
-                            name = {
-                                vehicle.name
-                            }
-                            type = {
-                                "vehicle"
-                            }
-
-                            />}):null} <
-                            /div> <
-                            /div>              
+        return (<div className = "container mt-3" >
+                    <h3 className = "text-warning text-start" > Vehicles </h3> 
+                    <div className = "d-flex flex-row overflow-scroll" > {
+                        store.infoVehicle.length > 0 ? store.infoVehicle.map((vehicle, index) => {
+                                return <Card
+                                key = {vehicle.uid}
+                                id = {vehicle.uid}
+                                image = {`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`}
+                                name = {vehicle.name}
+                                type = {"vehicles"}/>}):null} 
+                    </div> 
+                </div>              
                         )
                     }
 
