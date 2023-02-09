@@ -1,26 +1,14 @@
-import React, {
-    useState,
-    useEffect,
-    useContext
-} from "react";
+import React, {useState,useEffect,useContext} from "react";
 import "../../styles/home.css";
 import Card from "../component/card.jsx";
-import {
-    Link,
-    useParams
-} from "react-router-dom";
-import {
-    Context
-} from "../store/appContext";
+import {Link,useParams} from "react-router-dom";
+import {Context} from "../store/appContext";
 
 
 
 
 const Characters = (props) => {
-        const {
-            store,
-            actions
-        } = useContext(Context);
+        const {store,actions} = useContext(Context);
         const [infocharacter, setInfoCharacter] = useState([])
         const params = useParams();
 

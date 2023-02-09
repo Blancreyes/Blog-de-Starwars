@@ -18,7 +18,8 @@ const getState = ({
             ],
             infoCharacter:[],
             infoPlanet:[],
-			infoVehicle:[]
+			infoVehicle:[],
+            favorites:[]
 
         },
         actions: {
@@ -26,6 +27,15 @@ const getState = ({
             exampleFunction: () => {
                 getActions().changeColor(0, "green");
             },
+
+            //Creando la función para el click favorites
+            addFavorites: (name) => {
+                const store = getStore();
+                setStore({favorites:[...store.favorites,name]})
+                // console.log(store.favorites)
+                // console.log(name)
+            },
+
             loadSomeData: () => {
                 /**
                 	fetch().then().then(data => setStore({ "foo": data.bar }))

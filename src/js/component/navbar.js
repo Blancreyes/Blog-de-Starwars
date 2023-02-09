@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import banner from "../../img/Star-wars-logo.png"
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+
+	const {store,actions} = useContext(Context);
+	console.log(store.favorites)
+	
 	return (
 
 		
@@ -18,7 +23,7 @@ export const Navbar = () => {
 					<Link to="demo">
 						<div className="btn-group">
 							<button type="button" className="btn btn-primary">Favorites
-								<span className="badge text-bg-secondary ms-1">0</span>
+								<span className="badge text-bg-secondary ms-1">{store.favorites.length}</span>
 							</button>
 							<button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
 								<span className="visually-hidden">Toggle Dropdown</span>

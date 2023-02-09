@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 
 const Card = (props) => {
@@ -7,7 +9,7 @@ const Card = (props) => {
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	// const basename = process.env.BASENAME || "";
 
-
+    const {store,actions} = useContext(Context);
     
 	return (
 
@@ -24,7 +26,7 @@ const Card = (props) => {
                 <button className="btn btn-outline-primary">Learn more!</button>
                 </Link>
                 
-                <button className="btn btn-outline-warning"><i className="fa fa-heart"></i></button>
+                <button className="btn btn-outline-warning" onClick={() => actions.addFavorites(props.name)}><i className="fa fa-heart"></i></button>
             </div>
         </div>
 	);
