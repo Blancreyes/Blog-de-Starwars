@@ -16,10 +16,10 @@ const getState = ({
                     initial: "white"
                 }
             ],
-            infoCharacter:[],
-            infoPlanet:[],
-			infoVehicle:[],
-            favorites:[]
+            infoCharacter: [],
+            infoPlanet: [],
+            infoVehicle: [],
+            favorites: []
 
         },
         actions: {
@@ -31,9 +31,22 @@ const getState = ({
             //Creando la función para el click favorites
             addFavorites: (name) => {
                 const store = getStore();
-                setStore({favorites:[...store.favorites,name]})
+                setStore({
+                    favorites: [...store.favorites, name]
+                })
                 // console.log(store.favorites)
                 // console.log(name)
+            },
+
+            deleteItem: (name) => {
+                const store = getStore();
+
+                // console.log("funciona")
+                const filteredFavorites = store.favorites.filter((item) => item !== name)
+                setStore({
+                    favorites: filteredFavorites
+                })
+
             },
 
             loadSomeData: () => {
@@ -71,17 +84,21 @@ const getState = ({
 
                 fetch("https://www.swapi.tech/api/planets/")
                     .then(res => res.json())
-                    .then(data => setStore({infoPlanet: data.results}))
+                    .then(data => setStore({
+                        infoPlanet: data.results
+                    }))
                     .catch(err => console.error(err))
             },
-			getVehiclesInfo() {
+            getVehiclesInfo() {
 
-				fetch("https://www.swapi.tech/api/vehicles/")
-					.then(res => res.json())
-					.then(data => setStore({infoVehicle:data.results}))
-					.catch(err => console.error(err))
-	
-			}
+                fetch("https://www.swapi.tech/api/vehicles/")
+                    .then(res => res.json())
+                    .then(data => setStore({
+                        infoVehicle: data.results
+                    }))
+                    .catch(err => console.error(err))
+
+            }
 
         }
     };

@@ -20,23 +20,23 @@ export const Navbar = () => {
 							
 					</Link>
 
-					<Link to="demo">
-						<div className="btn-group">
-							<button type="button" className="btn btn-primary">Favorites
-								<span className="badge text-bg-secondary ms-1">{store.favorites.length}</span>
-							</button>
-							<button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-								<span className="visually-hidden">Toggle Dropdown</span>
-							</button>
-							<ul className="dropdown-menu">
-								<li className="dropdown-item">Something else here</li>
-								<li className="dropdown-item">Something else here</li>
-								<li className="dropdown-item">Something else here</li>
-								<li className="dropdown-divider"></li>
-								<li className="dropdown-item" >Separated link</li>
-							</ul>
-						</div>
-					</Link>
+					
+				<div className="btn-group">
+					<button type="button" className="btn btn-primary">Favorites
+						<span className="badge text-bg-secondary ms-1">{store.favorites.length}</span>
+					</button>
+					<button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+						<span className="visually-hidden">Toggle Dropdown</span>
+					</button>
+					<ul className="dropdown-menu">
+						{store.favorites.map((item, index)=><li className="dropdown-item" key={index}>{item} <i className="fa fa-trash" aria-hidden="true" onClick={()=>actions.deleteItem(item)}></i></li>
+						)
+						
+						
+						}
+					</ul>
+				</div>
+					
 					
 								
 				</div>
