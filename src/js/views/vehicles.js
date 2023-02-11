@@ -5,21 +5,13 @@ import React, {
 } from "react";
 import "../../styles/home.css";
 import Card from "../component/card.jsx";
-import {
-    Link,
-    useParams
-} from "react-router-dom";
-import {
-    Context
-} from "../store/appContext";
+import {Link,useParams} from "react-router-dom";
+import {Context} from "../store/appContext";
 
 
 
 const Vehicles = (props) => {
-        const {
-            store,
-            actions
-        } = useContext(Context);
+        const {store,actions} = useContext(Context);
         const [infoVehicle, setInfoVehicle] = useState([])
         const params = useParams();
 
