@@ -12,7 +12,7 @@ export const Single = props => {
 	const {type, theid} = useParams();
 	const [infocharacter, setInfoCharacter] = useState({})
 	const [infoPlanet, setInfoPlanet] = useState({})
-    const params = useParams();
+    	const params = useParams();
 	let location = useLocation();
 	
 	console.log(params.type)
@@ -69,9 +69,16 @@ export const Single = props => {
 								/>;
 	  
 	} else (loginLearMoreButton = <LearMore 
-	
-	
-	
+								key={infoVehicle.uid}
+								id={infoVehicle.uid}
+								image={`https://starwars-visualguide.com/assets/img/vehicles/${infoVehicle.uid}.jpg`}
+								name={infoVehicle.properties?.name}
+								description={infoVehicle.description}
+								property1={infoVehicle.properties?.model}
+								property2={infoVehicle.properties?.vehicle_class}
+								property3={infoVehicle.properties?.manufacturer}
+								property4={infoVehicle.properties?.cost_in_credits}
+								property5={infoVehiclet.properties?.max_atmosphering_speed}
 	
 	/>)
 		
