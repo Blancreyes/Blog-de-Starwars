@@ -12,6 +12,7 @@ export const Single = props => {
 	const {type, theid} = useParams();
 	const [infocharacter, setInfoCharacter] = useState({})
 	const [infoPlanet, setInfoPlanet] = useState({})
+	const [infoVehicle, setInfoVehicle] = useState({})
     	const params = useParams();
 	let location = useLocation();
 	
@@ -19,13 +20,12 @@ export const Single = props => {
 
 	function getInfo () {
 
-        https://swapi.dev/api/people
         fetch(`https://www.swapi.tech/api/${type}/${theid}`)
         .then(res => res.json())
 		.then(data => setInfoCharacter(data.result))
 		.catch(err => console.error(err))
         
-    }
+    	}
 
 	function getInfoPlanets() {
 	
@@ -34,11 +34,19 @@ export const Single = props => {
 		.then(data => setInfoPlanet(data.result))
 		.catch(err => console.error(err))
         
-    }
+   	 }
+	
+	function getInfoVehicles() {
 
-    useEffect(()=>{
+   	fetch(`https://www.swapi.tech/api/${type}/${theid}`)
+        .then(res => res.json())
+        	.then(data => setInfoVehicle(data.result))
+        	.catch(err => console.error(err))
+
+    	useEffect(()=>{
 		getInfo()
 		getInfoPlanets()
+		getInfoVehicles()
 	},[])
 
 	var loginLearMoreButton;
