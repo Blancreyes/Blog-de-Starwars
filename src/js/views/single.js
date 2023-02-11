@@ -13,7 +13,7 @@ export const Single = props => {
 	const [infocharacter, setInfoCharacter] = useState({})
 	const [infoPlanet, setInfoPlanet] = useState({})
 	const [infoVehicle, setInfoVehicle] = useState({})
-    	const params = useParams();
+    const params = useParams();
 	let location = useLocation();
 	
 	console.log(params.type)
@@ -42,8 +42,9 @@ export const Single = props => {
         .then(res => res.json())
         	.then(data => setInfoVehicle(data.result))
         	.catch(err => console.error(err))
+	}
 
-    	useEffect(()=>{
+    useEffect(()=>{
 		getInfo()
 		getInfoPlanets()
 		getInfoVehicles()
@@ -86,7 +87,7 @@ export const Single = props => {
 								property2={infoVehicle.properties?.vehicle_class}
 								property3={infoVehicle.properties?.manufacturer}
 								property4={infoVehicle.properties?.cost_in_credits}
-								property5={infoVehiclet.properties?.max_atmosphering_speed}
+								property5={infoVehicle.properties?.max_atmosphering_speed}
 	
 	/>)
 		
